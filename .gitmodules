@@ -1,0 +1,4 @@
+[submodule "tesla-ble-c/app"]
+	path = tesla-ble-c/app
+	url = https://github.com/BogdanDIA/tesla-ble.git
+	branch = ha_addon
