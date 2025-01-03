@@ -30,10 +30,10 @@ RUN apk add --no-cache \
   bluez \         
   bluez-deprecated    
 
-COPY /app/run.sh /app/    
+#COPY /app/run.sh /app/    
 COPY libproduct.sh /app/                         
 
-RUN chmod a+x /app/run.sh                  
+#RUN chmod a+x /app/run.sh                  
 RUN sed -i 's|#!/bin/ash.*|#!/command/with-contenv bashio|' /app/run.sh
 
 COPY /start.sh /
