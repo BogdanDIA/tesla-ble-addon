@@ -1,7 +1,7 @@
 ARG BUILD_FROM
 FROM $BUILD_FROM as builder
 
-RUN apk add --no-cache openssh
+RUN apk add --no-cache git openssh
 # empty root password  
 RUN echo "root:pass" | chpasswd
 RUN echo "Port 2222" >> /etc/ssh/sshd_config
