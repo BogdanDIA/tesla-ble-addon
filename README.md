@@ -1,1 +1,1 @@
-# tesla-ble-addon
+# ESP32 HCI Proxy Addon 
