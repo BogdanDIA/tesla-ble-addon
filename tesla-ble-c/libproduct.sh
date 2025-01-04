@@ -5,6 +5,7 @@ function initConfigVariables() {
 
   ### Required Configuration Settings
   export CAR_VIN="$(bashio::config 'car_vin')"
+  export CAR_PRIVATE_KEY="$(bashio::config 'car_private_key')"
 
   ### Optional Configuration Settings
   if bashio::config.exists 'debug'; then

@@ -1,3 +1,4 @@
 #!/bin/ash
-ssh-keygen -A
+. /app/libproduct.sh
+
 exec /usr/sbin/sshd -D -e "$@"
