@@ -41,7 +41,6 @@ RUN echo "PermitEmptyPasswords yes" >> /etc/ssh/sshd_config
 RUN ssh-keygen -A                                                       
                                                                         
 #COPY /run.sh /                                                         
-- Dockerfile 1/55 1%
 #RUN chmod a+x /run.sh                                       
 COPY libproduct.sh /app/                                     
                                                              
