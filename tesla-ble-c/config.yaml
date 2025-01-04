@@ -21,9 +21,11 @@ ports:
 
 options:
   car_vin: ""
+  car_private_key: "/share/storage/private_key.pem"
 
 schema:
   car_vin: str 
+  car_private_key: str
 
   debug: bool?
 
