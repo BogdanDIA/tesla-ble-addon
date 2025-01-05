@@ -22,10 +22,18 @@ ports:
 options:
   car_vin: ""
   car_private_key: "/share/storage/private_key.pem"
+  ble_hci_num: "0"
+  ble_command_timeout: "20s"
+  ble_connect_timeout: "30s"
+  ssh_public_key: "/share/storage/root_ssh.pub"
 
 schema:
   car_vin: str 
   car_private_key: str
+  ble_hci_num: int(0,10) 
+  ble_command_timeout: str 
+  ble_connect_timeout: str 
+  ssh_public_key: str
 
   debug: bool?
 
