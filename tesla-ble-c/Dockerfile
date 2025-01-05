@@ -42,7 +42,7 @@ RUN ssh-keygen -A
 COPY libproduct.sh /app/                                     
 
 RUN mkdir /root/.ssh
-RUN chmod 700 .ssh
+RUN chmod 700 /root/.ssh
 RUN touch /root/.ssh/authorized_keys
 RUN chmod 700 /root/.ssh/authorized_keys
                                                              
