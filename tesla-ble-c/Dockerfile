@@ -28,14 +28,11 @@ RUN apk add --no-cache \
   bluez \                                                    
   bluez-deprecated                                           
                                                              
-# empty root password                                        
-RUN echo "root:" | chpasswd                                  
-                                                             
-# enable ssh with empty password                             
+# set-up sshd config
 RUN echo "Port 2222" >> /etc/ssh/sshd_config                 
 RUN echo "PermitRootLogin yes" >> /etc/ssh/sshd_config       
-RUN echo "PasswordAuthentication yes" >> /etc/ssh/sshd_config           
-RUN echo "PermitEmptyPasswords yes" >> /etc/ssh/sshd_config             
+RUN echo "PasswordAuthentication no" >> /etc/ssh/sshd_config           
+RUN echo "PubkeyAuthentication yes" >> /etc/ssh/sshd_config           
                                                                         
 # generate the keys                                                     
 RUN ssh-keygen -A                                                       
@@ -43,6 +40,11 @@ RUN ssh-keygen -A
 #COPY /run.sh /                                                         
 #RUN chmod a+x /run.sh                                       
 COPY libproduct.sh /app/                                     
+
+RUN mkdir /root/.ssh
+RUN chmod 700 .ssh
+RUN touch /root/.ssh/authorized_keys
+RUN chmod 700 /root/.ssh/authorized_keys
                                                              
 COPY /start.sh /                                             
 #RUN sed -i 's|#!/bin/ash.*|#!/command/with-contenv bashio|' /app/run.sh
