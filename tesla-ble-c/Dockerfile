@@ -19,8 +19,6 @@ RUN go get ./... && \
 FROM $BUILD_FROM                                            
 COPY --from=builder /root/go/bin/tesla-control /root/go/bin/
 COPY app /root/go/bin/tesla-ble                             
-# temporary fix for config file                             
-COPY app/tesla-ble.conf /root/go/bin/                       
                                                             
 # install dependencies                                      
 RUN apk add --no-cache \                              
