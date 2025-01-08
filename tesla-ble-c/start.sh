@@ -16,6 +16,10 @@ else
   log_error "No SSH public key file was found"
 fi
 
+log_debug "Starting debug daemon" 
+touch /root/go/bin/charging-log.txt
+tail -fn0 /root/go/bin/charging-log.txt | xargs -I{} /root/go/bin/log-debug.sh "{}" &
+
 exec /usr/sbin/sshd -D -e "$@"
 
 while :; do
