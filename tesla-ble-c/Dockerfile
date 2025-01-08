@@ -35,9 +35,9 @@ RUN echo "PubkeyAuthentication yes" >> /etc/ssh/sshd_config
 # generate the keys                                                     
 RUN ssh-keygen -A                                                       
                                                                         
-#COPY /run.sh /                                                         
-#RUN chmod a+x /run.sh                                       
 COPY libproduct.sh /app/                                     
+COPY log-debug.sh /root/go/bin/
+RUN chmod a+x /root/go/bin/log-debug.sh
 
 RUN mkdir /root/.ssh
 RUN chmod 700 /root/.ssh
@@ -45,7 +45,6 @@ RUN touch /root/.ssh/authorized_keys
 RUN chmod 700 /root/.ssh/authorized_keys
                                                              
 COPY /start.sh /                                             
-#RUN sed -i 's|#!/bin/ash.*|#!/command/with-contenv bashio|' /app/run.sh
 RUN chmod a+x /start.sh                                                 
 RUN sed -i 's|#!/bin/ash.*|#!/command/with-contenv bashio|' /start.sh   
                                                                         
