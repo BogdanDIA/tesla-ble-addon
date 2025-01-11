@@ -2,8 +2,15 @@
 . /app/libproduct.sh
 
 log_info "Entering main loop..."
-log_info "Copying SSH public key from $SSH_PUBLIC_KEY"
 
+log_info "Checking car's private key from $CAR_PRIVATE_KEY"
+if [[ -f $CAR_PRIVATE_KEY ]]; then
+  log_info "Private key is found"
+else
+  log_error "Private key does not exist"
+fi
+
+log_info "Copying SSH public key from $SSH_PUBLIC_KEY"
 if [[ -f $SSH_PUBLIC_KEY ]]; then
   RESULT="$(cat /share/storage/root_ssh.pub > /root/.ssh/authorized_keys)"
   STAT=$?
