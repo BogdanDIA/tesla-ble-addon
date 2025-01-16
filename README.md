@@ -1,6 +1,6 @@
 # Tesla BLE add-on
 
-- This package [tesla-ble](https://github.com/BogdanDIA/tesla-ble) work as a Home Assistant add on using local BLE controller to communicate with the car.
+- This package [tesla-ble](https://github.com/BogdanDIA/tesla-ble) work as a Home Assistant add-on using local BLE controller to communicate with the car.
 It will run the official Tesla Vehicle SDK commands via BLE to communicate with the car without the need of internet.
 
 
@@ -11,7 +11,7 @@ It will run the official Tesla Vehicle SDK commands via BLE to communicate with 
 
 This repository contains the following add-ons
 
-### [Tesla ble](./tesla-ble-c)
+### [Tesla BLE](./tesla-ble-c)
 
 ![Supports aarch64 Architecture][aarch64-shield]
 ![Supports amd64 Architecture][amd64-shield]
