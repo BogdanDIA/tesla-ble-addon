@@ -7,7 +7,7 @@ RUN apk add --no-cache git go
 RUN rm -rf /vehicle-command                                                         
 RUN rm -rf /tesla-ble                                                               
 RUN git clone https://github.com/teslamotors/vehicle-command.git /vehicle-command   
-RUN cd /vehicle-command && git checkout tags/v0.3.4
+RUN cd /vehicle-command && git checkout tags/v0.4.0
                                                                                     
 # apply patch                                                                       
 COPY app/patches/vehicle-command/device_linux.go /vehicle-command/pkg/connector/ble/
