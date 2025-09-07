@@ -1,5 +1,5 @@
 name: "Tesla BLE"
-version: "0.0.2"
+version: "0.0.3"
 slug: "tesla_ble"
 description: "Tesla Bluetooth Control"
 url: "https://github.com/BogdanDIA/tesla-ble-addon"

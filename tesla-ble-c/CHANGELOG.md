@@ -1,5 +1,8 @@
 # Changelog 
 
+## v0.0.3
+- updated to use v0.4.0 of vehicle-command.
+
 ## v0.0.2
 - updated to use v0.3.4 of vehicle-command.
 - tesla-control has a parameter to setup the HCI num (id)
